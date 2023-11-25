@@ -14,11 +14,11 @@
 		<thead>
 			<th>圖片</th>
 			<th>片名</th>
+			<th>中文片名</th>
 			<th>類型</th>
-			<th>IMDB</th>
 			<th>時長</th>
 			<th>發佈年份</th>
-			<th>中文片名</th>
+			<th>IMDB</th>
     </thead>
 		<tbody>
 
@@ -34,7 +34,7 @@
 	$.getJSON('20231125.json', function(data) {
 			$.each(data.results, function(i, f) {
 				var tblRow = "<tr>" + "<td><img src='" + f.img + "' /></td>" +
-					"<td>" + f.title + "</td>" + "<td>" + f.title_type + "</td>" + "<td><a target='_blank' href='https://www.imdb.com/title/" + f.imdb_id + "/'>link</a></td>" + "<td>" + f.runtimes + "</td>" + "<td>" + f.year + "</td>" + "<td>" + f.unogsdate + "</td>" + "</tr>"
+					"<td>" + f.title + "</td>" + "<td>" + f.title_tw + "</td>" + "<td>" + f.title_type + "</td>" + "<td>" + f.runtimes + "</td>" + "<td>" + f.year + "</td>" + "<td><a target='_blank' href='https://www.imdb.com/title/" + f.imdb_id + "/'>link</a></td>" + "</tr>"
 					$(tblRow).appendTo("#titlesdata tbody");
  			});
 		});
