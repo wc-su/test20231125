@@ -35,7 +35,7 @@
 	$.getJSON('20231125.json', function(data) {
 			$.each(data.results, function(i, f) {
 				var tblRow = "<tr>" + "<td><img src='" + f.img + "' /></td>" +
-					"<td>" + f.title + "</td>" + "<td>" + f.title_tw + "</td>" + "<td>" + f.title_type + "</td>" + "<td>" + f.runtimes + "</td>" + "<td>" + f.year + "</td>" + "<td><a target='_blank' href='https://www.netflix.com/title/" + f.imdb_id.replace('/t/g','') + "'>link</a></td>" + "<td><a target='_blank' href='https://www.imdb.com/title/" + f.imdb_id + "/'>link</a></td>" + "</tr>"
+					"<td>" + f.title + "</td>" + "<td>" + f.title_tw + "</td>" + "<td>" + f.title_type + "</td>" + "<td>" + f.runtimes + "</td>" + "<td>" + f.year + "</td>" + "<td><a target='_blank' href='https://www.netflix.com/title/" + f.imdb_id.replace(/t/g,'') + "'>link</a></td>" + "<td><a target='_blank' href='https://www.imdb.com/title/" + f.imdb_id + "/'>link</a></td>" + "</tr>"
 					$(tblRow).appendTo("#titlesdata tbody");
  			});
 		});
